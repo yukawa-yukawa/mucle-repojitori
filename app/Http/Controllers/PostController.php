@@ -10,5 +10,10 @@ class PostController extends Controller
     {
         return $post->get();
     }   
+    
+    public function menu()
+    {
+        return view('posts/menu');
+    }
 
 }
