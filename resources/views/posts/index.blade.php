@@ -25,7 +25,7 @@
         <p><label>トレーニングの目的：
              <select name=”item”>
                 <option value=”item1”>筋肥大</option>
-                <option value=”item2”>最大重量up</option>
+                <option value=”item2”>最大挙上重量up</option>
                 <option value=”item3”>ダイエット</option>
              </select>
         </label></p>

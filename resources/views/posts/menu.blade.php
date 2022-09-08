@@ -8,6 +8,5 @@
     </head>
 <body>
     <p>メニュー</p>
-    
 </body>
 </html>
