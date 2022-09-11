@@ -21,14 +21,14 @@ class PostController extends Controller
         $data = [
             "training_sex" => $training_sex,
             "training_objective" => $training_objective,
-            "traning_" => $training_part,
-            "traning_" => $training_equipment,
+            "traning_part" => $training_part,
+            "traning_equipment" => $training_equipment,
         ];
         
         return view('/index',$data);
     }
     
-    public function menu(Request $request, Menu $menu)
+    public function menu(Request $request, muscles $muscles)
     {
         $serch_sex = $request->input('sex');
         $serch_objective = $request->input('objective');
@@ -38,19 +38,19 @@ class PostController extends Controller
         $query = muscles::query();
         
         if (!is_null($index_sex) && $index_sex != 0) {
-            $query->where('training_sex', $training_sex)->get();
+            $query->where('sex',$index_sex)->get();
         }
 
         if (!is_null($index_objective) && $index_objective != 0) {
-            $query->where('training_objective', $training_objective)->get();
+            $query->where('objective',$index_objective)->get();
         }
 
         if (!is_null($index_part) && $index_part != 0) {
-            $query->where('training_part', $training_part)->get();
+            $query->where('part',$index_part)->get();
         }
 
         if (!is_null($index_equipment) && $index_equipment != 0) {
-            $query->where('training_equipment', $training_equipment)->get();
+            $query->where('equipment',$index_equipment)->get();
         }
         
         $training_sex = config('training_sex');
@@ -63,6 +63,7 @@ class PostController extends Controller
             "training_objective" => $training_objective,
             "traning_part" => $training_part,
             "traning_equipment" => $training_equipment,
+            "query" => $query,
         ];
         
         return view('/menu',$data);
