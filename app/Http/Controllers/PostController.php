@@ -21,11 +21,11 @@ class PostController extends Controller
         $data = [
             "training_sex" => $training_sex,
             "training_objective" => $training_objective,
-            "traning_part" => $training_part,
-            "traning_equipment" => $training_equipment,
+            "training_part" => $training_part,
+            "training_equipment" => $training_equipment,
         ];
         
-        return view('/index',$data);
+        return view('posts/index',$data);
     }
     
     public function menu(Request $request, muscles $muscles)

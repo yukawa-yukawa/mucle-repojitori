@@ -11,13 +11,15 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/posts', 'PostController@index');
 Route::get('/', function() {
     return view('posts/index');
 });
 
-Route::get('/posts/menu', 'PostController@menu');
+Route::get('/', 'PostController@index');
+
+
+Route::get('/menu', 'PostController@menu');
