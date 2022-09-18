@@ -12,30 +12,27 @@ class TrainingSeeder extends Seeder
     public function run()
     {
         DB::table('muscles')->insert([
-            'id' => 1,
-            'sex' => 1,
-            'objective' => 1,
-            'part' => 4,
-            'equipment' => 3,
-            'memo' => ''
+            'sex_id' => 1,
+            'objective_id' => 1,
+            'part_id' => 4,
+            'equipment_id' => 3,
+            'name_id' => 1,
         ]);
         
         DB::table('muscles')->insert([
-            'id' => 2,
-            'sex' => 1,
-            'objective' => 1,
-            'part' => 2,
-            'equipment' => 5,
-            'memo' => ''
+            'sex_id' => 1,
+            'objective_id' => 1,
+            'part_id' => 2,
+            'equipment_id' => 5,
+            'name_id' => 2,
         ]);
         
         DB::table('muscles')->insert([
-            'id' => 3,
-            'sex' => 1,
-            'objective' => 1,
-            'part' => 1,
-            'equipment' => 1,
-            'memo' => ''
+            'sex_id' => 1,
+            'objective_id' => 1,
+            'part_id' => 1,
+            'equipment_id' => 1,
+            'name_id' => 3,
         ]);
     }
 }

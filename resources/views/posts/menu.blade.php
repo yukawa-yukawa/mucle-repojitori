@@ -9,11 +9,11 @@
 <body>
     <h1>メニュー</h1>
         @foreach($muscles as $muscle)
-            <p>{{ $muscles->muscles_id }}</p>
+            <p>{{ $muscle->part_id }}</p>
         @endforeach
         
-        @if($muscles->isEmpty())
-            <p>{{ "お探しのプランはありませんでした。他の検索条件を試してみてください。" }}</p>
+        @if (empty($muscles))
+            <p>トレーニングメニューはありませんでした。他の検索条件を試してみてください。</p>
         @endif
 </body>
 </html>
