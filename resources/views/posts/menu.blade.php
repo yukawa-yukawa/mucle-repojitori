@@ -8,10 +8,9 @@
     </head>
 <body>
     <h1>メニュー</h1>
-        @foreach($muscles as $muscle)
-            <p>{{ $muscle->part_id }}</p>
-        @endforeach
-        
+            @foreach($muscles as $muscle)
+                <p>{{ $muscle->name->event_name }}</p>
+            @endforeach
         @if (empty($muscles))
             <p>トレーニングメニューはありませんでした。他の検索条件を試してみてください。</p>
         @endif
