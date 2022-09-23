@@ -4,7 +4,10 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+ 
     "content-hash": "a529f988609587fa2b53a21d4e92cf12",
+
+   
     "packages": [
         {
             "name": "doctrine/cache",
@@ -101,6 +104,7 @@
         },
         {
             "name": "doctrine/dbal",
+
             "version": "3.4.4",
             "source": {
                 "type": "git",
@@ -133,6 +137,7 @@
                 "symfony/cache": "^5.4|^6.0",
                 "symfony/console": "^4.4|^5.4|^6.0",
                 "vimeo/psalm": "4.27.0"
+
             },
             "suggest": {
                 "symfony/console": "For helpful console commands such as SQL execution and import of files."
@@ -143,7 +148,9 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
+                
                     "Doctrine\\DBAL\\": "src"
+
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -186,13 +193,17 @@
                 "queryobject",
                 "sasql",
                 "sql",
+                "sqlanywhere",
+
                 "sqlite",
                 "sqlserver",
                 "sqlsrv"
             ],
             "support": {
                 "issues": "https://github.com/doctrine/dbal/issues",
+
                 "source": "https://github.com/doctrine/dbal/tree/3.4.4"
+
             },
             "funding": [
                 {
@@ -208,7 +219,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-09-01T21:26:42+00:00"
+            "time": "2022-09-01T21:26:42+00:00
         },
         {
             "name": "doctrine/deprecations",
