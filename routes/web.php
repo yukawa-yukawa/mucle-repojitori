@@ -21,5 +21,4 @@ Route::get('/', function() {
 
 Route::get('/', 'PostController@index');
 
-
 Route::get('/menu', 'PostController@menu');

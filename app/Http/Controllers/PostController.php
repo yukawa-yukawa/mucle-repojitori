@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Muscles;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -24,35 +25,36 @@ class PostController extends Controller
             "training_part" => $training_part,
             "training_equipment" => $training_equipment,
         ];
-        
         return view('posts/index',$data);
     }
     
-    public function menu(Request $request, muscles $muscles)
+    public function menu(Request $request, Muscles $muscles)
     {
-        $serch_sex = $request->input('sex');
-        $serch_objective = $request->input('objective');
-        $serch_part = $request->input('part');
-        $serch_equipment = $request->input('equipment');
+        $index_sex = $request->input('sex');
+        $index_objective = $request->input('objective');
+        $index_part = $request->input('part');
+        $index_equipment = $request->input('equipment');
         
         $query = muscles::query();
         
         if (!is_null($index_sex) && $index_sex != 0) {
-            $query->where('sex',$index_sex)->get();
+            $query->where('sex_id',$index_sex)->get();
         }
 
         if (!is_null($index_objective) && $index_objective != 0) {
-            $query->where('objective',$index_objective)->get();
+            $query->where('objective_id',$index_objective)->get();
         }
 
         if (!is_null($index_part) && $index_part != 0) {
-            $query->where('part',$index_part)->get();
+            $query->where('part_id',$index_part)->get();
+           //$query = $query->where('part_id',$index_part);
         }
 
         if (!is_null($index_equipment) && $index_equipment != 0) {
-            $query->where('equipment',$index_equipment)->get();
+            $query->where('equipment_id',$index_equipment)->get();
         }
         
+        $muscles = $query->get();
         $training_sex = config('training_sex');
         $training_objective = config('training_objective');
         $training_part = config('training_part');
@@ -63,10 +65,10 @@ class PostController extends Controller
             "training_objective" => $training_objective,
             "traning_part" => $training_part,
             "traning_equipment" => $training_equipment,
-            "query" => $query,
+            "muscles" => $muscles,
         ];
         
-        return view('/menu',$data);
+        return view('posts/menu',$data);
     }
     
     

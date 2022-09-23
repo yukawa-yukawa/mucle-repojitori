@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMusclesTable extends Migration
+class CreateDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,8 @@ class CreateMusclesTable extends Migration
      */
     public function up()
     {
-        Schema::create('muscles', function (Blueprint $table) {
+        Schema::create('details', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('sex_id');
-            $table->integer('objective_id');
-            $table->integer('part_id');
-            $table->integer('equipment_id');
-            $table->integer('name_id')->unsigned();
-            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -32,6 +26,6 @@ class CreateMusclesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('muscles');
+        Schema::dropIfExists('details');
     }
 }
