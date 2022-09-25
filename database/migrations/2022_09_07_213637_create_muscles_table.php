@@ -19,9 +19,12 @@ class CreateMusclesTable extends Migration
             $table->integer('objective_id');
             $table->integer('part_id');
             $table->integer('equipment_id');
-            $table->integer('name_id')->unsigned();
+            $table->bigInteger('name_id')->unsigned();
             $table->rememberToken();
             $table->timestamps();
+            $table->foreign('name_id')
+            ->references('id')->on('names')
+            ->onDelete('cascade');
         });
     }
 

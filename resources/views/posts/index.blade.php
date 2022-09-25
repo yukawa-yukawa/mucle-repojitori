@@ -54,7 +54,6 @@
                 @endforeach
             </select>
         </label>
-        
         </p>
     
         <p><label>最大挙上重量(kg)：<input type="text" id="nameText"></label></p>

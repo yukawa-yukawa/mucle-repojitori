@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Muscles;
 use Illuminate\Http\Request;
+use App\Name;
+use App\Muscle;
 
 class PostController extends Controller
 {
@@ -28,33 +29,34 @@ class PostController extends Controller
         return view('posts/index',$data);
     }
     
-    public function menu(Request $request, Muscles $muscles)
+    public function menu(Request $request, Muscle $muscle)
     {
         $index_sex = $request->input('sex');
         $index_objective = $request->input('objective');
         $index_part = $request->input('part');
         $index_equipment = $request->input('equipment');
         
-        $query = muscles::query();
+        $query = Muscle::query();
         
         if (!is_null($index_sex) && $index_sex != 0) {
-            $query->where('sex_id',$index_sex)->get();
+            $query->where('sex_id',$index_sex);
         }
 
         if (!is_null($index_objective) && $index_objective != 0) {
-            $query->where('objective_id',$index_objective)->get();
+            $query->where('objective_id',$index_objective);
         }
 
         if (!is_null($index_part) && $index_part != 0) {
-            $query->where('part_id',$index_part)->get();
+            $query->where('part_id',$index_part);
            //$query = $query->where('part_id',$index_part);
         }
 
         if (!is_null($index_equipment) && $index_equipment != 0) {
-            $query->where('equipment_id',$index_equipment)->get();
+            $query->where('equipment_id',$index_equipment);
         }
         
         $muscles = $query->get();
+        //$muscles = $query->orderBy('id', 'asc')->paginate(3);
         $training_sex = config('training_sex');
         $training_objective = config('training_objective');
         $training_part = config('training_part');
@@ -67,9 +69,6 @@ class PostController extends Controller
             "traning_equipment" => $training_equipment,
             "muscles" => $muscles,
         ];
-        
         return view('posts/menu',$data);
     }
-    
-    
 }
