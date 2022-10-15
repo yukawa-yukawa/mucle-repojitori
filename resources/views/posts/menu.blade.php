@@ -6,13 +6,20 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
-<body>
-    <h1>メニュー</h1>
-            @foreach($muscles as $muscle)
-                <p>{{ $muscle->name->event_name }}</p>
-            @endforeach
-        @if (empty($muscles))
-            <p>トレーニングメニューはありませんでした。他の検索条件を試してみてください。</p>
-        @endif
-</body>
+    <body>
+        <h1>メニュー</h1>
+                @if($muscles->isempty())
+                
+                    <p>トレーニングメニューはありませんでした。他の検索条件を試してみてください。</p>
+                
+                @else
+        
+                    @foreach($muscles as $muscle)
+                        <p>{{ $muscle->name->event_name }}</p>
+                        <img src="{{ asset('image/' . $muscle->name->event_picture) }}" alt="トレーニング"> 
+                        <p>{{ $muscle->name->event_precautions }}</p>
+                    @endforeach
+            
+                @endif
+    </body>
 </html>
