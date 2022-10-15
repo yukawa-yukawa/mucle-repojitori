@@ -38,25 +38,27 @@ class PostController extends Controller
         
         $query = Muscle::query();
         
-        if (!is_null($index_sex) && $index_sex != 0) {
-            $query->where('sex_id',$index_sex);
-        }
+        //if (!is_null($index_sex) && $index_sex != 0) {
+            $query->where('sex_id',$index_sex)->get();
+        //}
 
-        if (!is_null($index_objective) && $index_objective != 0) {
-            $query->where('objective_id',$index_objective);
-        }
+        //if (!is_null($index_objective) && $index_objective != 0) {
+            $query->where('objective_id',$index_objective)->get();
+        //}
 
-        if (!is_null($index_part) && $index_part != 0) {
-            $query->where('part_id',$index_part);
+        //if (!is_null($index_part) && $index_part != 0) {
+            $query->where('part_id',$index_part)->get();
            //$query = $query->where('part_id',$index_part);
-        }
+        //}
 
-        if (!is_null($index_equipment) && $index_equipment != 0) {
-            $query->where('equipment_id',$index_equipment);
-        }
+        //if (!is_null($index_equipment) && $index_equipment != 0) {
+            $query->where('equipment_id',$index_equipment)->get();
+        //}
         
-        $muscles = $query->get();
-        //$muscles = $query->orderBy('id', 'asc')->paginate(3);
+        //$muscles = $query->get();
+        $muscles = $query->orderBy('id', 'asc')->get();
+        //dd($muscles);
+        
         $training_sex = config('training_sex');
         $training_objective = config('training_objective');
         $training_part = config('training_part');
@@ -69,6 +71,7 @@ class PostController extends Controller
             "traning_equipment" => $training_equipment,
             "muscles" => $muscles,
         ];
+        //dd($muscles);
         return view('posts/menu',$data);
     }
 }
