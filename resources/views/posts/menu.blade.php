@@ -16,7 +16,7 @@
         
                     @foreach($muscles as $muscle)
                         <p>{{ $muscle->name->event_name }}</p>
-                        <img src="{{ asset('image/' . $muscle->name->event_picture) }}" alt="トレーニング"> 
+                        <img src="{{ asset('img/' . $muscle->name->event_picture) }}" alt="トレーニング"> 
                         <p>{{ $muscle->name->event_precautions }}</p>
                     @endforeach
             
