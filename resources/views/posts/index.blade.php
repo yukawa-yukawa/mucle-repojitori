@@ -11,9 +11,9 @@
     <form action="/menu" method="get">
         @csrf
         
-        <p><label>身長(cm)：<input type="text" id="nameText"></label></p>
+        <p><label>身長(cm)：<input type="text" id="height"></label></p>
 
-        <p><label>体重(kg)：<input type="text" id="nameText"></label></p>
+        <p><label>体重(kg)：<input type="text" id="body weight"></label></p>
 
         <p><label>性別：
             <select name='sex'>
@@ -56,9 +56,9 @@
         </label>
         </p>
     
-        <p><label>最大挙上重量(kg)：<input type="text" id="nameText"></label></p>
+        <p><label>最大挙上重量(kg)：<input type="text" id="max_lifting_weight"></label></p>
 
-        [<button type="submit">作成</button>]
+        <button type="submit">作成</button>
     </form>    
 </body>
 </html>
