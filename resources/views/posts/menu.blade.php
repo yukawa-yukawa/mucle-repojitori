@@ -16,6 +16,9 @@
                         <p>{{ $muscle->name->event_name }}</p>
                         <img src="{{ asset('img/' . $muscle->name->event_picture) }}" alt="トレーニング"> 
                         <p>{{ $muscle->name->event_precautions }}</p>
+                        
+                        @inject('common', 'App\Libraries\Common')
+                        <p>{{ $common->training_set($muscle->name->id,$max_lifting_weight) }}</p>
                     @endforeach
             
                 @endif
