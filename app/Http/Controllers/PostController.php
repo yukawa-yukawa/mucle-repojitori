@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Name;
 use App\Muscle;
-use App\Libraries\training_sets;
+use App\Libraries\Common;
 
 class PostController extends Controller
 {
@@ -65,14 +65,20 @@ class PostController extends Controller
         $training_part = config('training_part');
         $training_equipment = config('training_equipment');
         
+        //$muscle_id = \DB::table('muscles')->find($id);
+        $max_lifting_weight = $request->input('max_lifting_weight');
+        /*$ret = Common::training_set($muscle_id,$max_lifting_weight);*/
+        
         $data = [
             "training_sex" => $training_sex,
             "training_objective" => $training_objective,
             "traning_part" => $training_part,
             "traning_equipment" => $training_equipment,
             "muscles" => $muscles,
+            "max_lifting_weight" => $max_lifting_weight,
         ];
-        //dd($muscles);
+        
         return view('posts/menu',$data);
+        return view('posts/menu',compact($max_lifting_weight));
     }
 }
