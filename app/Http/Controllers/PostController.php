@@ -79,6 +79,11 @@ class PostController extends Controller
         ];
         
         return view('posts/menu',$data);
-        return view('posts/menu',compact($max_lifting_weight));
+        return view('posts/menu',$max_lifting_weight);
+        //return view('posts/menu',compact('data','max_lifting_weight'));
+       /* return view('posts/menu')->with([
+       "data" => $data,
+       "max_lifting_weight" => $max_lifting_weight,
+    ]);*/
     }
 }
