@@ -56,7 +56,7 @@
         </label>
         </p>
     
-        <p><label>最大挙上重量(kg)：<input type="text" id="max_lifting_weight"></label></p>
+        <p><label>最大挙上重量(kg)：<input type="text" name="max_lifting_weight" id="max_lifting_weight"></label></p>
         
         <button type="submit">作成</button>
     </form>    
