@@ -17,9 +17,9 @@ class Common
         $x8 = $max_lifting_weight*0.8;
         $x9 = $max_lifting_weight*0.9;
         
-        if($muscle_id === 1){
+        if($muscle_id === 1 or 3){
             echo "$x7 kgを15回
-                  $x8を15回";
+                  $x8 kgを15回";
         }elseif($muscle_id === 2){
             echo "膝コロ10回2セット、立ちコロ10回1セット";
         }else{
