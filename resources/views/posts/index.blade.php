@@ -7,13 +7,13 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
 <body>
-    <p>筋トレメニュー作成機</p>
+    <p><font size="6">筋トレメニュー作成機</font></p>
     <form action="/menu" method="get">
         @csrf
         
-        <p><label>身長(cm)：<input type="text" id="height"></label></p>
+        <p><label>身長(cm)：<input type="number" id="height"></label></p>
 
-        <p><label>体重(kg)：<input type="text" id="body weight"></label></p>
+        <p><label>体重(kg)：<input type="number" id="body weight"></label></p>
 
         <p><label>性別：
             <select name='sex'>
@@ -56,9 +56,10 @@
         </label>
         </p>
     
-        <p><label>最大挙上重量(kg)：<input type="text" name="max_lifting_weight" id="max_lifting_weight"></label></p>
+        <p><label>最大挙上重量(kg)：<input type="number" name="max_lifting_weight" id="max_lifting_weight"></br>
+                　最大挙上重量がわからない場合、男性は40、女性は20と入力してください。</label></p>
         
-        <button type="submit">作成</button>
+        <button type="submit"><font size="5">作成</font></button>
     </form>    
 </body>
 </html>
