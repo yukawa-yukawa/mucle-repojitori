@@ -8,12 +8,17 @@
     </head>
     <body>
         <h1>メニュー</h1>
+        
+                <!-- 一致する条件がなければ、次の要件を出す -->
+        
                 @if($muscles->isempty())
                     <p>トレーニングメニューはありませんでした。他の検索条件を試してみてください。</p>
                 @else
         
+                <!-- 検索した条件と一致するメニューがあれば表示 --> 
+        
                     @foreach($muscles as $muscle)
-                        <p>{{ $muscle->name->event_name }}</p>
+                        <p><font size="6">{{ $muscle->name->event_name }}</font></p>
                         <img src="{{ asset('img/' . $muscle->name->event_picture) }}" alt="トレーニング"> 
                         <p>{{ $muscle->name->event_precautions }}</p>
                         
